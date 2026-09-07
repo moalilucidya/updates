@@ -183,7 +183,7 @@
     <nav class="rail" id="rail">
       <div class="lbl">Agenda</div>
       <div class="agenda-item" data-go="0"><span class="mk"></span><div><div class="nm">Overview</div></div></div>
-      <div class="agenda-item" data-go="1" style="--ai-accent:var(--violet)"><span class="mk"></span><div><div class="nm">Automations</div><div class="st">Deciding tomorrow</div></div></div>
+      <div class="agenda-item" data-go="1" style="--ai-accent:var(--violet)"><span class="mk"></span><div><div class="nm">Automations</div><div class="st">Meeting tomorrow</div></div></div>
       <div class="agenda-item" data-go="2" style="--ai-accent:var(--blue)"><span class="mk"></span><div><div class="nm">Dashboards</div><div class="st">3 options ready</div></div></div>
       <div class="agenda-item" data-go="3" style="--ai-accent:var(--teal)"><span class="mk"></span><div><div class="nm">Replica DB</div><div class="st">Aligned</div></div></div>
       <div class="agenda-item" data-go="4"><span class="mk"></span><div><div class="nm">Tomorrow</div></div></div>
@@ -195,69 +195,57 @@
       <!-- 0 : overview -->
       <section class="slide active" style="--accent:var(--txt-2)">
         <div class="kicker"><span class="bar"></span>This week</div>
-        <h1>Three workstreams moved. Two need your decision tomorrow.</h1>
+        <h1>Three Main Updates</h1>
         <div class="aglist">
-          <div class="agrow"><span class="amk" style="background:var(--violet)"></span><span class="an">Automations — reuse our workflow engine for AI agents</span><span class="pill amber"><span class="pd"></span>Deciding tomorrow</span></div>
-          <div class="agrow"><span class="amk" style="background:var(--blue)"></span><span class="an">Dashboards — the monitor limit blocking big accounts</span><span class="pill blue"><span class="pd"></span>3 options ready</span></div>
+          <div class="agrow"><span class="amk" style="background:var(--violet)"></span><span class="an">Automations — reuse AIA workflow engine vs cxm Automations</span><span class="pill amber"><span class="pd"></span>Deciding tomorrow</span></div>
+          <div class="agrow"><span class="amk" style="background:var(--blue)"></span><span class="an">Dashboards — the 8 monitor limit blocking big accounts</span><span class="pill blue"><span class="pd"></span>3 options ready</span></div>
           <div class="agrow"><span class="amk" style="background:var(--teal)"></span><span class="an">Replica DB — unblock usage analytics</span><span class="pill teal"><span class="pd"></span>Aligned</span></div>
         </div>
       </section>
 
       <!-- 1 : automations -->
       <section class="slide" style="--accent:var(--violet)">
-        <div class="kicker"><span class="bar"></span>Automations · workflows for the AIA unit</div>
-        <h1>Reuse our workflow engine for AI agents — instead of building a second one.</h1>
-        <p class="lede">The AIA unit needs a way to build and run agent workflows. Rather than build their own, they could use the <b>same Workflow builder we already shipped for CXM</b>. I checked whether that works technically.</p>
+        <div class="kicker"><span class="bar"></span>Automations · workflows cxm & AIA</div>
+        <h1>Reuse one engine instead of building separately</h1>
         <div class="did">
-          <span class="chip">Watched the AIA unit's session</span>
+          <span class="chip">Watched the AIA unit's workflow demo session</span>
           <span class="chip">Reviewed the technical trade-offs with Shatta</span>
         </div>
-        <span class="pill amber"><span class="pd"></span>Deciding tomorrow</span>
-        <div class="next"><span class="arw">→</span>Meeting with <b style="font-weight:500;color:var(--txt)">you and Shatta tomorrow</b>&nbsp;to decide: reuse the CXM engine, or build a separate one. Full report to follow.</div>
+        <span class="pill amber"><span class="pd"></span>Meeting tomorrow with Shatta and Hasan, the contractor</span>
+        <div class="next"><span class="arw">→</span>Meeting with <b style="font-weight:500;color:var(--txt)">Me, Hasan, and Shatta tomorrow</b>&nbsp;to discuss: reuse the engine, or build separately.  Full report to follow.</div>
       </section>
 
       <!-- 2 : dashboards -->
       <section class="slide" style="--accent:var(--blue)">
         <div class="kicker"><span class="bar"></span>Dashboards · the monitor limit</div>
-        <h1>Our biggest accounts can't build the dashboards they need.</h1>
-        <p class="lede">A dashboard can pull from at most <b>8 monitors</b> today. Our largest customers track far more than that, so they hit the wall:</p>
+        <h1>Our clients can't build the dashboards they need.</h1>
+        <p class="lede">A dashboard can pull from at most <b>8 monitors</b> today. Our customers track far more than that, so they hit the wall:</p>
         <div class="evidence">
-          <div class="ev"><div class="n">11+</div><div class="who">Hind</div><div class="cap">accounts to track</div></div>
+          <div class="ev"><div class="n">11+</div><div class="who">CSM</div><div class="cap">accounts to track</div></div>
           <div class="ev"><div class="n">25</div><div class="who">MOH</div><div class="cap">monitors needed</div></div>
           <div class="ev"><div class="n">24</div><div class="who">CST</div><div class="cap">monitors needed</div></div>
         </div>
-        <p class="lede">I scoped the fix with Abdulwase and Yusr — how competitors handle it, what customers expect, how they use dashboards. Three ways to support more than 8 monitors:</p>
+        <p class="lede">I discussed the current behavior with Abdulwase and the competitors with Yusr — how competitors handle it, what customers expect, how they use dashboards. Three ways to support more than 8 monitors:</p>
         <div class="opts">
           <div class="opt"><div class="t"><span class="i">◷</span>Refresh on a schedule</div><div class="d">Past 8 monitors, the dashboard shows data refreshed every 3&nbsp;hours instead of re-loading every monitor each time it's opened.</div></div>
-          <div class="opt"><div class="t"><span class="i">▦</span>Limit what each monitor shows</div><div class="d">Cap how much each monitor can display, so every extra monitor adds a small, predictable cost.</div></div>
-          <div class="opt"><div class="t"><span class="i">◧</span>Trade time range for breadth</div><div class="d">The more monitors on a dashboard, the shorter its default date range — a year, then a month, then 7&nbsp;days — keeping total data in check.</div></div>
+          <div class="opt"><div class="t"><span class="i">▦</span>Limit what each monitor shows</div><div class="d">Limit how many widgets each monitor can have, so every extra monitor adds a small, predictable cost.</div></div>
+          <div class="opt"><div class="t"><span class="i">◧</span>Trade time range for data</div><div class="d">The more monitors data on a dashboard, the shorter its allowed date range — a year, then a month, then 7&nbsp;days — keeping total data in check.</div></div>
         </div>
-        <div class="opts-note">All three break the link between "more monitors" and "more load," so wide dashboards stay fast.</div>
-        <div class="next"><span class="arw">→</span>Taking all three to <b style="font-weight:500;color:var(--txt)">Talaat's planning meeting tomorrow</b> to choose one.</div>
+        <div class="opts-note">All three break the link between "more monitors" and "more load", so wide dashboards stay fast.</div>
+        <div class="next"><span class="arw">→</span>Taking all three to <b style="font-weight:500;color:var(--txt)">Talaat in planning meeting tomorrow</b> to choose one.</div>
       </section>
 
       <!-- 3 : replica -->
       <section class="slide" style="--accent:var(--teal)">
         <div class="kicker"><span class="bar"></span>Replica DB · usage &amp; analytics</div>
         <h1>We can finally give analytics a full copy of the data.</h1>
-        <p class="lede">To report on how customers use the product, we need a read-only copy — a <b>replica</b> — of the database. An earlier version had to leave tables out because of a security restriction. That restriction no longer applies, so this replica can include <b>every table</b>.</p>
+        <p class="lede">To report on how customers use the product, we need a read-only copy — a <b>replica</b> — of the database. An earlier version with Ameera had to build specific queries on specific tables because of security restrictions. That restriction no longer applies as we discussed with Hiba Khayyat directly, so this replica can include <b>every table in MySQL DB (Redis DB in next phase if needed)</b>.</p>
         <div class="did">
-          <span class="chip">Aligned with Muhab and Ameera, who built the earlier version</span>
+          <span class="chip">Aligned with Muhab and Ameera, who worked on the earlier version</span>
           <span class="chip">Hiba will check every table, column by column, for sensitive data</span>
         </div>
         <span class="pill teal"><span class="pd"></span>Aligned</span>
-        <div class="next"><span class="arw">→</span>Muhab is on board. Our safeguard is <b style="font-weight:500;color:var(--txt)">Hiba's column review</b> — we're not cutting scope to stay safe.</div>
-      </section>
-
-      <!-- 4 : tomorrow -->
-      <section class="slide" style="--accent:var(--txt-2)">
-        <div class="kicker"><span class="bar"></span>What I need from you tomorrow</div>
-        <h1>Three decisions, one day.</h1>
-        <div class="decs">
-          <div class="dec"><span class="lead" style="background:var(--violet)"></span><span class="w">Automations</span><span class="ask">Decide with me and Shatta: <b>reuse the CXM workflow engine</b> for agents, or build a separate one.</span></div>
-          <div class="dec"><span class="lead" style="background:var(--blue)"></span><span class="w">Dashboards</span><span class="ask">Help <b>pick one of the three fixes</b> with Talaat, to unblock Hind, MOH, and CST.</span></div>
-          <div class="dec"><span class="lead" style="background:var(--teal)"></span><span class="w">Replica DB</span><span class="ask">For your visibility — <b>aligned and moving</b>, nothing needed.</span></div>
-        </div>
+        <div class="next"><span class="arw">→</span>Muhab is on board. Our safeguard is <b style="font-weight:500;color:var(--txt)">Hiba's review</b> — we're not cutting scope to stay safe.</div>
       </section>
 
     </div>
